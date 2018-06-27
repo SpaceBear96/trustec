@@ -10,8 +10,6 @@
 
     <title> TrusTec - {{ Auth::user()->name }}</title>
     <link rel="shortcut icon" href="{{ asset('img/trustec.ico')}}" />
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -25,6 +23,8 @@
           integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <!-- Scripts--> 
+
     
 </head>
 <body>
@@ -79,6 +79,6 @@
             @yield('content')
         </main>
     </div>
-    
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>
