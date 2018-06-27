@@ -1,0 +1,124 @@
+
+body{
+    background: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+.navbar-t {
+    background-color: #ef5350;
+}
+
+.navbar-t.botones {
+    background-color: #ff867c;
+    border-radius: 10px;
+}
+
+.menu-icon {
+    border: 0px;
+}
+
+.separador {
+    height: 5px;
+    margin-top: 10px;
+    margin: 15px;
+    background-color: #8f94ed;
+    width: auto;
+}
+
+.sbrtop {
+    box-shadow: 0 -5px 5px -5px #333;
+}
+
+.sbrboton {
+    box-shadow: 0 5px 5px -5px #333;
+}
+
+.sbrigth {
+    box-shadow: -5px 0 5px -5px #333;
+}
+
+.opacity {
+    background-color: #e8e8e8;
+    opacity: 0.97; /* Opacidad 60% */
+}
+
+.btn-api {
+    background-color: #122b40;
+    color: white;
+}
+
+.blur {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+}
+
+.gradient {
+    background: linear-gradient(to right, rgba(73, 106, 189, 1) 0%, rgba(130, 116, 207, 1) 38%, rgba(149, 222, 207, 1) 82%, rgba(147, 206, 222, 1) 100%);
+}
+
+.carrusel-full {
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.headercolor {
+    background-color: #03a9f4
+}
+
+#color-bar {
+    width: 100%;
+    height: 80%;
+    background-color: #f9a825;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+}
+
+#nav-bar {
+    height: 20px;
+    width: 100%;
+    background-color: #c17900;
+}
+
+#content {
+    width: 50%;
+    height: 400px;
+    background-color: #ddd;
+    z-index: 3;
+    margin-top: 80px;
+    box-shadow: 1px 1px 1px 1px #ccc;
+
+}
+
+.card-people-1{
+    width: 18rem;
+    height: 10em;
+    color: #122b40;
+    border-left: #ff9800;
+    border-style: solid
+}
+.card-people-2{
+    width: 18rem;
+    height: 10em;
+    color: #122b40;
+    border-left: #283593;
+    border-style: solid
+}
+.card-people-3{
+    width: 18rem;
+    height: 10em;
+    color: #122b40;
+    border-left: #e64a19;
+    border-style: solid
+}
+.text-presentacion{
+    padding: 10px;
+    border-radius: 10px;
+}
