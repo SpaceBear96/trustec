@@ -3,9 +3,7 @@
 	<table class="table">
 		
 		@foreach($prod as $prods)
-      
-        
-                    </div>
+
 		<div>
 			id auth: {{Auth::user()->id}}
 			<img src="https://pikmail.herokuapp.com/{{$prods->email}}?size=30" alt="Profile Picture" style="border-radius: 40px; margin-rigth: 10px;">{{$prods->name}}<br>

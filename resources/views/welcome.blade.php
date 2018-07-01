@@ -43,7 +43,7 @@
         <a class="navbar-brand" href="#">
             <img class="align-content-center" src="{{ asset('img/icons-system/trustec-brand.png')}}" width="120" height="28"
                  alt="">
-        </a>
+        </a>s
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,14 @@
                             aria-haspopup="true" aria-expanded="false">
                         Soporte
                     </button>
-                    
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#one">Nuestros terminos</a>
+                        <a class="dropdown-item" href="#two">Reglamentos de uso</a>
+                        <div role="separator" class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#three">Preguntas
+                            <frecuentes></frecuentes>
+                        </a>
+                    </div>
                 </li>
             </ul>
             <div class="align-content-sm-center">
