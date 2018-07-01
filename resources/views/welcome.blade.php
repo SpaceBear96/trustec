@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
         <title>Bienvenido a TrusTec</title>
         <link rel="shortcut icon" href="{{ asset('img/trustec.ico')}}" />
         <!-- Fonts -->
@@ -104,7 +104,7 @@
                     @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Intercambios</a>
+                        <a href="{{ route('home') }}">Intercambios</a>
                     @else
                         
                     @endauth

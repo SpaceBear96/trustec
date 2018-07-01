@@ -39,11 +39,10 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Calculadoras <span class="sr-only">(current)</span></a>
-                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Puntos de entrega</a>
+                            <a class="btn" href="{{ route('producto.index') }}" style="border-color:crimson ; color: gray">
+                                 Mis Productos
+                            </a>
                         </li>
                     </ul>
                     <div class="bmd-form-group bmd-collapse-inline pull-xs-right">
@@ -88,11 +87,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline-primary btn-sm"
-                                style="border-color:crimson ; color: gray"> Publicar un producto
-                        </button>
-                    </div>
+                    
+                        <a class="btn" href="{{ route('producto.store') }}" style="border-color:crimson ; color: gray">
+                         Publicar un producto
+                        </a>
+                        
                 </form>
             </nav>
         </div>
@@ -105,38 +104,22 @@
                         <h5>Productos</h5>
                     </div>
                     <div class="card-text">
-                        <table class="table table-borderless ">
-                            <tbody>
-                            <tr>
-                                <th scope="row">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="card-title">
-                                                <h5>Celular Iphone</h5>
-                                            </div>
-                                            <div class="card-image">
-                                                <img src="{{asset('img/mobile%20.png')}}" style="width: 40px"></div>
-                                        </div>
-                                    </div>
+                        
+                        @foreach($prod as $prods)
+            
+        <div>
+            id auth: {{Auth::user()->id}}
+            <img src="https://pikmail.herokuapp.com/{{$prods->email}}?size=30" alt="Profile Picture" style="border-radius: 40px; margin-rigth: 10px;">{{$prods->name}}<br>
+            {{$prods->nombre}} <br>
+            {{$prods->descripcion}} <br>
+            {{$prods->area}} <br>
+            {{$prods->estado}}
+            <img src="./images/{{$prods->imagen}}" id="prods" style="    width: 60px;
+            height: 60px;">
+            
+        </div>
+        @endforeach
 
-                                </th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            </tbody>
-                        </table>
                     </div>
                     <div class="card-footer">
                         <p>Hello</p>
