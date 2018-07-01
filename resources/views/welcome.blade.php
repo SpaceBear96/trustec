@@ -100,7 +100,7 @@
             <div class="container-fluid ">
                 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
                     <div class="card-header">
-                        <h1 class=" my-4" id="fat">TRUSTEC</h1>
+       
                     @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
