@@ -61,14 +61,7 @@
                             aria-haspopup="true" aria-expanded="false">
                         Soporte
                     </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#one">Nuestros terminos</a>
-                        <a class="dropdown-item" href="#two">Reglamentos de uso</a>
-                        <div role="separator" class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#three">Preguntas
-                            <frecuentes></frecuentes>
-                        </a>
-                    </div>
+                    
                 </li>
             </ul>
             <div class="align-content-sm-center">
