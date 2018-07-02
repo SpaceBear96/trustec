@@ -85,12 +85,42 @@
                     </div>
                 </li>
             </ul>
-            
+            <div class="bmd-form-group bmd-collapse-inline pull-xs-right">
+                <button class="btn bmd-btn-icon" for="search" data-toggle="collapse"
+                        data-target="#collapse-search" aria-expanded="false" aria-controls="collapse-search">
+                    <i class="material-icons">search</i>
+                </button>
+                <span id="collapse-search" class="collapse">
+<input class="form-control" type="text" id="search" placeholder="Busca tu producto">
+</span>
+            </div>
         </div>
     </nav>
 </div>
 <div class="container">
-    
+    <!--nav-->
+    <div class="card mb-4 box-shadow my-5 my-md-3">
+        <nav class="nav nav-pills flex-column flex-sm-row">
+            <select name="area" class="badge-pill bg-light flex-sm-fill text-sm-center nav-link" id="area">   
+                <option value="Todos">Todos</option>      
+                <option value="Administración de Redes y Comunicaciones">Administración de Redes y Comunicaciones</option>
+                <option value="Diseño y Desarrollo de Simuladores y Videojuegos">Diseño y Desarrollo de Simuladores y Videojuegos</option>
+                <option value="Diseño Industrial">Diseño Industrial</option>
+                <option value="Aviónica y Mecánica Aeronáutica">Aviónica y Mecánica Aeronáutica</option>
+                <option value="Diseño y Desarrollo de Software">Diseño y Desarrollo de Software</option>
+                <option value="Electrónica y Automatización Industrial">Electrónica y Automatización Industrial</option>
+                <option value="Gestión y Mantenimiento de Maquinaria Industrial">Gestión y Mantenimiento de Maquinaria Industrial</option>
+                <option value="Electricidad Industrial">Electricidad Industrial</option>
+                <option value="Gestión y Mantenimiento de Maquinaria Pesada">Gestión y Mantenimiento de Maquinaria Pesada</option>
+                <option value="Mecatrónica Industrial">Mecatrónica Industrial</option>
+                <option value="Operaciones Mineras">Operaciones Mineras</option>
+                <option value="Producción y Gestión Industrial">Producción y Gestión Industrial</option>
+                <option value="Procesos Químicos y Metalúrgicos">Procesos Químicos y Metalúrgicos</option>
+        </select> - <a class="badge-pill bg-light flex-sm-fill text-sm-center nav-link" href="{{ route('agregar') }}">Publicar</a>
+        </nav>
+    </div>
+    <!--nav-->
+       
      @yield('content')
       
     <!--footer-->

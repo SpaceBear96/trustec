@@ -9,34 +9,18 @@ use Auth;
 use App\User;
 class ProductoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public function index()
     {
-      $car = Carreras::All();
       $prod = Producto::Productos();
-      return view('inicio',compact('prod','car'));
+      return view('inicio',compact('prod'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function agregar(Request $request)
     {
         return view('Producto.agregar');
     }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
        //  $this->validate($request,[ 'nombre'=>'required', 'descripcion'=>'required','area'=>'required', 'dueno'=>'required']);
@@ -56,7 +40,7 @@ class ProductoController extends Controller
          $producto->area = $request->input('area');
          $producto->save();
 
-         return redirect()->route('inicio')->with('success','Producto Agregado y Publicado');
+         return redirect()->route('m_agregar');
     }
 
     /**

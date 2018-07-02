@@ -19,4 +19,9 @@ class Producto extends Model
     	->orderByDesc('producto.id')
         ->get();
     }
+
+  //  public function scopeArea($query, $area){
+  //      if($area)
+   //         return $query->where('area','LIKE',"%$area%");
+   // }   
 }

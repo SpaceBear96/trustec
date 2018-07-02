@@ -1,4 +1,5 @@
-@extends('layouts.app')
+
+@extends('layouts.nav')
 @section('content')
             <!--Cuerpo-->
         <div class="card-deck mb-3  flex-row">
@@ -16,13 +17,12 @@
                             <strong class="d-inline-block mb-2 text-primary">{{$prods->name}}</strong>
                             <h3 class="mb-1">
                                 <a class="text-dark" href="#">{{$prods->nombre}}</a>
-                                <A HREF="mailto:{{$prods->email}}" target="_blank">Escribeme</A>
+                                <A HREF="mailto:{{$prods->email}}" target="_blank">Escribeme</A>    
                             </h3>
                             <p class="card-text mb-auto">{{$prods->descripcion}}</p>
-                            <a class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" 
-                            href="#">Solicitar Producto
+                            <a class="btn btn-primary"
+                            href="{{ URL::to('inicio/solicitar',$prods->id)}}">Solicitar Producto
                             </a>
-
                         </div>
                         <img class="card-img-right flex-auto " data-src="holder.js/200x250?theme=thumb"
                              alt="No hay imagen disponible" style="width: 200px; height: 250px;"
@@ -53,7 +53,7 @@
                 @endif
                 @endforeach
            </div>
-        </div>
+        </div>  
         <div class="card mb-4 box-shadow col-md-4 d-none d-md-block">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Nuestros puntos de encuentros</h4>

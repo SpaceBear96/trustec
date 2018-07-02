@@ -12,7 +12,7 @@ class OpcionesController extends Controller
     public function inventario(){
 
     	 $prod = Producto::All();
-        return view('Producto.inventario',compact('prod'));
+        return view('Producto.perfil',compact('prod'));
     }
 
 	public function pedientes(){

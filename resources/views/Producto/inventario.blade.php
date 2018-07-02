@@ -9,8 +9,7 @@
 			{{$prods->estado}}
 			{{$prods->imagen}}
 			<img src="./../images/{{$prods->imagen}} " id="prods" style="width: 60px;height: 60px;">
-        	<hr>
-        @else		
+        	<hr>	
 		@endif
 		@endforeach
 			
