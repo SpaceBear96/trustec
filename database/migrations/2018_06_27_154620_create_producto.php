@@ -18,9 +18,9 @@ class CreateProducto extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('area');
-            $table->string('path');
+            $table->string('imagen');
             $table->integer('dueno');
-            $table->integer('estado');
+            $table->integer('estado')->default('1');
             $table->timestamps();
         });
     }

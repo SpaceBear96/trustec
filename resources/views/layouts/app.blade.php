@@ -1,94 +1,194 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<html lang="en">
+<head lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv=”Expires” content=”0″>
-    <meta http-equiv=”Last-Modified” content=”0″>
-    <meta http-equiv=”Cache-Control” content=”no-cache, mustrevalidate”>
-    <meta http-equiv=”Pragma” content=”no-cache”>
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title> TrusTec - {{ Auth::user()->name }}</title>
-    <link rel="shortcut icon" href="{{ asset('img/trustec.ico')}}" />
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/micss.css') }}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet"
           href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
           integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <!-- Scripts--> 
+    <link rel="stylesheet" href="{{ asset('css/micss')}}'">
+    <link rel="stylesheet" href="{{ asset('css/objects')}}'">
+    <link rel="script" href="{{ asset('js/popper.min.js')}}">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    
+    <title> TrusTec | {{ Auth::user()->name }}</title>
+    <link rel="shortcut icon" href="{{ asset('img/trustec.ico')}}" />
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="{{ asset('css/mibostrap/css/bootstrap-material-design.css')}}">
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/objects.css')}}">
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{asset('img/logo-v2.png')}}" height="40" class="d-inline-block align-top" alt="">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img src="https://pikmail.herokuapp.com/{{ Auth::user()->email }}?size=30" alt="Profile Picture" style="border-radius: 40px; margin-rigth: 10px;"> {{ Auth::user()->name }} <span class="caret"></span>
+<body cz-shortcut-listen="true">
+<div id="navbar" class="fixed-top">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4  bg-white border-bottom box-shadow">
+        <h5 class="my-0 mr-md-auto font-weight-normal">Trustec</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <button type="button" class="btn btn-primary">
+                Notificaciones <span class="badge badge-light">4</span>
+            </button>
+            <button type="button" class="btn btn-primary">
+                Mensajes <span class="badge badge-light">4</span>
+            </button>
+            <button type="button" class="btn btn-secondary">
+                Nivel <span class="badge badge-pill bg-light">4</span>
+            </button>
+      
+                                <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+ <img src="{{ Auth::user()->avatar }}" alt="Profile Picture" style="border-radius: 40px; width:35px;height: 35px; margin-rigth: 10px;"> {{Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    
+                                    <a class="btn-outline-primary dropdown-item" href="{{ route('inventario') }}">Mi perfil</a>
+                                    <a class="btn-outline-primary dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
+                               
+       
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <style type="text/css">
-        #prods{
-            width: 60px;
-            height: 60px;
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-white border-bottom box-shadow mb-3">
+        <a class="navbar-brand" href="{{ url('/')}}">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        }
-    </style>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Puntos de encuentro</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ayuda
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Contactanos</a>
+                        <a class="dropdown-item" href="#">Terminos de uso</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Reglamento</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="bmd-form-group bmd-collapse-inline pull-xs-right">
+                <button class="btn bmd-btn-icon" for="search" data-toggle="collapse"
+                        data-target="#collapse-search" aria-expanded="false" aria-controls="collapse-search">
+                    <i class="material-icons">search</i>
+                </button>
+                <span id="collapse-search" class="collapse">
+<input class="form-control" type="text" id="search" placeholder="Busca tu producto">
+</span>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <!--nav-->
+    <div class="card mb-4 box-shadow my-5 my-md-3">
+        <nav class="nav nav-pills flex-column flex-sm-row">
+            <li class="nav-item dropdown">
+                <section class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">Filtrar: Carreras</section>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Maquinaria Pesada</a>
+                    <a class="dropdown-item" href="#">Quimica Metalurgica</a>
+                    <a class="dropdown-item" href="#">Diseño de software e integracion de sistemas</a>
+                    <a class="dropdown-item" href="#">Electrotecnia industrial</a>
+                </div>
+            </li>
+            <a class="badge-pill bg-light flex-sm-fill text-sm-center nav-link"href="{{ route('agregar') }}">Publicar</a>
+        </nav>
+    </div>
+    <!--nav-->
+       
+     @yield('content')
+      
+    <!--footer-->
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="./../img/wallpapers/imgs/logo-v2.png" alt="" width="30"
+                     height="30">
+                <small class="d-block mb-3 text-muted">© 2017-2018</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Reglamentos</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="">Ver reglamentos</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Fuentes</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Recursos</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Acerca de</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Team</a></li>
+                    <li><a class="text-muted" href="#">Tecsup</a></li>
+                    <li><a class="text-muted" href="#">Privacidad</a></li>
+                    <li><a class="text-muted" href="#">Terminos</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
 </body>
+<script>$(document).ready(function () {
+    $('body').bootstrapMaterialDesign();
+});</script>
+
+<!--App de Maps-->
+<script>
+    function initMap() {
+        var uluru = {lat: -12.044063, lng: -76.952909};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 17,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxlBD7pHLr89_h0qWzkhr_Px2Ekn3F05k&callback=initMap">
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+<script>
+    Holder.addTheme('thumb', {
+        bg: '#03a9f4',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+    });
+</script>
+
+
+
 </html>

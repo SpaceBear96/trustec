@@ -12,14 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('bienvenido');
 });
-
 Auth::routes();
-Route::get('/home','HomeController@index')->name('home');
+Route::get('/inicio','HomeController@index')->name('inicio');
 Route::resource('producto','ProductoController');
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 Route::get('/home/lista', function () {
     return view('Producto.lista');
 });
+Route::get('/inicio/agregar','CarrerasController@agregar')->name('agregar');
+Route::get('/inicio/inventario','OpcionesController@inventario')->name('inventario');
+

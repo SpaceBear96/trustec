@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/inicio';
 
     /**
      * Create a new controller instance.
@@ -61,6 +61,7 @@ class LoginController extends Controller
         return User::create([
             'name' => $user->name,
             'email' => $user->email,
+            'avatar' => $user->avatar,
             'provider' => strtoupper($provider),
             'provider_id' => $user->id
 

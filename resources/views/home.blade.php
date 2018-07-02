@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <!--<div class="container">
     <div class="row justify-content-center">
@@ -40,7 +39,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="btn" href="{{ route('producto.index') }}" style="border-color:crimson ; color: gray">
+                            <a class="btn" href="{{ route('inventario') }}" style="border-color:crimson ; color: gray">
                                  Mis Productos
                             </a>
                         </li>
@@ -88,7 +87,7 @@
                         </div>
                     </div>
                     
-                        <a class="btn" href="{{ route('producto.store') }}" style="border-color:crimson ; color: gray">
+                        <a class="btn" href="{{ route('agregar') }}" style="border-color:crimson ; color: gray">
                          Publicar un producto
                         </a>
                         
@@ -108,18 +107,34 @@
                         @foreach($prod as $prods)
             
         <div>
-            id auth: {{Auth::user()->id}}
+            
+            @if ($prods->estado == 1)
             <img src="https://pikmail.herokuapp.com/{{$prods->email}}?size=30" alt="Profile Picture" style="border-radius: 40px; margin-rigth: 10px;">{{$prods->name}}<br>
             {{$prods->nombre}} <br>
             {{$prods->descripcion}} <br>
             {{$prods->area}} <br>
-            {{$prods->estado}}
             <img src="./images/{{$prods->imagen}}" id="prods" style="    width: 60px;
             height: 60px;">
             
-        </div>
-        @endforeach
-
+            </div>
+           @endif
+           @endforeach
+           @foreach($prod as $prods)
+            
+        
+            <hr>
+            @if ($prods->estado == 3)
+            <div style="background: red;">
+            <img src="https://pikmail.herokuapp.com/{{$prods->email}}?size=30" alt="Profile Picture" style="border-radius: 40px; margin-rigth: 10px;">{{$prods->name}}<br>
+            {{$prods->nombre}} <br>
+            {{$prods->descripcion}} <br>
+            {{$prods->area}} <br>
+            <img src="./images/{{$prods->imagen}}" id="prods" style="    width: 100px;
+            height: 60px;">
+            <hr>
+            </div>
+           @endif
+           @endforeach     
                     </div>
                     <div class="card-footer">
                         <p>Hello</p>
@@ -143,44 +158,4 @@
         </div>
     </div>
     <br>
-    <div class="row">
-        <div class="col" style="background: white ;">
-            <div class="card" style="margin-top: 20px ;padding-bottom: 20px">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h6>Nosotros</h6>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            Numero de contacto: 54550588
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-</div>
-<script>
-    function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: uluru
-        });
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-        });
-    }
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxlBD7pHLr89_h0qWzkhr_Px2Ekn3F05k&callback=initMap">
-</script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
-        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-        crossorigin="anonymous"></script>
-
 @endsection

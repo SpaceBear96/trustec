@@ -76,7 +76,7 @@
                 @if (Route::has('login'))
         
                     @auth
-              
+                        <a class="btn btn-lg rounded btn-raised btn-api" href="{{ route('home') }}">Inicio</a>
                     @else      
                     <div class="bmd-form-group bmd-collapse-inline pull-xs-right">
                         <a class="btn btn-lg rounded btn-raised btn-api" href="{{url('auth/google')}}">

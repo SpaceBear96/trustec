@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 use App\Producto;
 use Illuminate\Http\Request;
-
+Use Socialite;
+use App\Carreras;
+use Auth;
+use App\User;
 class ProductoController extends Controller
 {
     /**
@@ -11,17 +14,12 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function inventario(){
-        $prod = Producto::Productos();
 
-        return view('Producto.index',compact('prod'));
-    }
     public function index()
     {
-      //  $users = Producto::All();
-      //  return view('Producto.index',compact('producto'));
+      $car = Carreras::All();
       $prod = Producto::Productos();
-      return view('home',compact('prod'));
+      return view('inicio',compact('prod','car'));
     }
 
     /**
@@ -31,7 +29,6 @@ class ProductoController extends Controller
      */
     public function agregar(Request $request)
     {
-
         return view('Producto.agregar');
     }
     /**
@@ -45,6 +42,7 @@ class ProductoController extends Controller
        //  $this->validate($request,[ 'nombre'=>'required', 'descripcion'=>'required','area'=>'required', 'dueno'=>'required']);
        //  Producto::create($request->all());
        //  return redirect()->route('home')->with('success','Registro creado satisfactoriamente');
+        $due = Auth::user()->id;
         if($request->hasFile('imagen')){
             $file = $request->file('imagen');
             $name = time().$file->getClientOriginalName();
@@ -53,12 +51,12 @@ class ProductoController extends Controller
          $producto = new Producto();
          $producto->nombre = $request->input('nombre');
          $producto->descripcion = $request->input('descripcion');
-         $producto->dueno = $request->input('dueno');
+         $producto->dueno = $due;
          $producto->imagen = $name;
          $producto->area = $request->input('area');
          $producto->save();
 
-         return redirect()->route('Producto.index')->with('success','Producto Agregado y Publicado');
+         return redirect()->route('inicio')->with('success','Producto Agregado y Publicado');
     }
 
     /**
@@ -69,7 +67,8 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+        $producto=Productos::find($id);
+        return view('Prestamo.agregar',compact('producto'));
     }
 
     /**
@@ -80,7 +79,7 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
