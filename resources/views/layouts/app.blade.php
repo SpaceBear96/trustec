@@ -11,8 +11,13 @@
     <link rel="script" href="{{ asset('js/popper.min.js')}}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title> TrusTec | {{ Auth::user()->name }}</title>
+                @if (Route::has('login'))
+                    @auth
+                    <title> TrusTec | {{ Auth::user()->name }}</title>
+                    @else 
+                    <title> TrusTec </title>
+                    @endauth
+                @endif  
     <link rel="shortcut icon" href="{{ asset('img/trustec.ico')}}" />
 
     <!-- Bootstrap-->
@@ -37,7 +42,9 @@
             <a class="btn">
                 Nivel 
             </a>
-      
+      @if (Route::has('login'))
+                    @auth
+                    
  <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
  <img src=" {{ Auth::user()->avatar }} " alt="Profile Picture" style="border-radius: 40px; width:35px;height: 35px; margin-rigth: 10px;"> {{Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -53,7 +60,10 @@
                                         @csrf
                                     </form>
                                 </div>
-                               
+                               <title> TrusTec | {{ Auth::user()->name }}</title>
+                    @else 
+                    @endauth
+                @endif
        
         </nav>
     </div>
@@ -90,7 +100,7 @@
     </nav>
 </div>
 <div class="container">
-    
+
      @yield('content')
       
     <!--footer-->

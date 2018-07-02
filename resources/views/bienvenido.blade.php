@@ -41,16 +41,25 @@
                     <a class="nav-link" href="#">¿Quienes somos?</a>
                 </li>
                 <li class="nav-item dropup">
+
+                    @if (Route::has('login'))
+                    @auth
+                    @else 
                     <a class="nav-link dropupx-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        Ayuda
-                    </a>
+                        Movil
+                    </a>     
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Soporte</a>
-                        <a class="dropdown-item" href="#">Nuestros Terminos</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Contactanos</a>
+                          <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
+                          <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
+                   
                     </div>
+                    @endauth
+                @endif  
+    
+                        
+
+
                 </li>
             </ul>
             <div class="align-content-sm-center">
@@ -65,6 +74,7 @@
                             <img src="{{ asset('img/icons-system/google-api.png')}}" height="25" alt="" class="mx-2">Iniciar
                             Sesion
                       </a>
+                          
                     </div>
                     @endauth
 
