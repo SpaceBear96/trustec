@@ -16,13 +16,15 @@
                         <div class="card-body d-flex flex-column align-items-start">
                             <strong class="d-inline-block mb-2 text-primary">{{$prods->name}}</strong>
                             <h3 class="mb-1">
-                                <a class="text-dark" href="#">{{$prods->nombre}}</a>
-                                <A HREF="mailto:{{$prods->email}}" target="_blank">Escribeme</A>    
+                                <a class="text-dark" href="#">{{$prods->nombre}}</a> 
                             </h3>
                             <p class="card-text mb-auto">{{$prods->descripcion}}</p>
-                            <a class="btn btn-primary"
-                            href="{{ URL::to('inicio/solicitar',$prods->id)}}">Solicitar Producto
+                            @if ($prods->dueno == Auth::user()->id)
+                            @else
+                            <a class="btn btn-primary" HREF="mailto:{{$prods->email}}">
+                                Contactar
                             </a>
+                            @endif
                         </div>
                         <img class="card-img-right flex-auto " data-src="holder.js/200x250?theme=thumb"
                              alt="No hay imagen disponible" style="width: 200px; height: 250px;"
@@ -38,9 +40,12 @@
                                 <a class="text-dark" href="#">{{$prods->nombre}}</a>
                             </h3>
                             <p class="card-text mb-auto">{{$prods->descripcion}}</p>
-                            <a type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target=".bd-example-modal-sm" href="#">Solicitar Producto
+                            @if ($prods->dueno == Auth::user()->id)
+                            @else
+                            <a class="btn btn-primary" HREF="mailto:{{$prods->email}}">
+                                Contactar
                             </a>
+                            @endif
                             
                         </div>
                         <img class="card-img-right flex-auto " data-src="holder.js/200x250?theme=thumb"
@@ -58,7 +63,7 @@
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Nuestros puntos de encuentros</h4>
             </div>
-            <div class="card-img-top" id="map"></div>
+            <div id="map" style="height: 480px; width: 280px;"></div>
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <p class="card-text">Nuestros puntos de encuentro oficiales de Tecsup</p>

@@ -15,13 +15,8 @@ class Producto extends Model
     public static function Productos(){
     	return DB::table('producto')
     	->join('users','users.id','=','producto.dueno')
-    	->select('producto.id','producto.nombre','producto.descripcion','producto.area','producto.imagen','producto.estado','users.email','users.name')
+    	->select('producto.id','producto.nombre','producto.descripcion','producto.area','producto.imagen','producto.estado','users.email','users.name','producto.dueno')
     	->orderByDesc('producto.id')
         ->get();
     }
-
-  //  public function scopeArea($query, $area){
-  //      if($area)
-   //         return $query->where('area','LIKE',"%$area%");
-   // }   
 }
