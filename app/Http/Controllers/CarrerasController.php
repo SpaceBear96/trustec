@@ -7,7 +7,7 @@ use App\Carreras;
 class CarrerasController extends Controller
 {
 	 public function agregar(){
-    	$car = Carreras::All();
-        return view('Producto.agregar',compact('car'));
+
+        return view('Producto.agregar');
     }
 }
