@@ -177,8 +177,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPebF1uaLVnQ8xwOuMo44RKBpnitBhW-4&callback=initMap"
     async defer></script>
 
-    <script type="text/javascript" src="./js/main.js"></script>
-    <script type="text/javascript" src="./js./localizacion.js"></script>
+    <script type="text/javascript" src="{{asset('/js/main.js)'}}"></script>
+    <script type="text/javascript" src="{{asset('/js./localizacion.js)'}}"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxlBD7pHLr89_h0qWzkhr_Px2Ekn3F05k&callback=initMap">
 </script>
