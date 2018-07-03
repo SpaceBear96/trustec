@@ -6,9 +6,9 @@ TrusTEC es una aplicación web de prestamos dentro de un ambiente laboral, se ba
 
 Para el manejo del proyecto localmente, previamente debes tener instalada la base de datos mysql y tener instalado composer en el equipo.
 
-### Instalación
+## Instalación
 
-## Proyecto 		
+### Proyecto 		
 
 Lo primero es clonar/descargar el archivo via zip.
 
@@ -34,7 +34,7 @@ copy .env.example .env
 php artisan key:generate
 ```
 
-## Bade de datos
+### Bade de datos
 
 Lo primero es configurar el archivo .env 
 
