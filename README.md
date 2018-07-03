@@ -66,10 +66,10 @@ git push trustec *su nombre*
 
 ## Programadores
 
-* **Junior Aguilar** - *BackEnd* - [PurpleBooth](https://github.com/SpaceBear96)
+* **Junior Aguilar** - *BackEnd* - [SpaceBear96](https://github.com/SpaceBear96)
 
-* **John Fabian** - *BackEnd* - [PurpleBooth](https://github.com/SpaceBear96)
+* **John Fabian** - *BackEnd* - [-](https://github.com/SpaceBear96)
 
-* **Sebastian Cueva** - *FrontEnd* - [PurpleBooth](https://github.com/SpaceBear96)
+* **Sebastian Cueva** - *FrontEnd* - [-](https://github.com/SpaceBear96)
 
 También pueden revisar la lista de [contribuidores](https://github.com/your/project/contributors).
