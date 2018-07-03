@@ -72,4 +72,4 @@ git push trustec *su nombre*
 
 * **Sebastian Cueva** - *FrontEnd* - [-](https://github.com/SpaceBear96)
 
-También pueden revisar la lista de [contribuidores](https://github.com/your/project/contributors).
+También pueden revisar la lista de [contribuidores](https://github.com/SpaceBear96/trustec/graphs/contributors).
