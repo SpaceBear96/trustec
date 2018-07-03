@@ -23,9 +23,7 @@ class ProductoController extends Controller
 
     public function store(Request $request)
     {
-       //  $this->validate($request,[ 'nombre'=>'required', 'descripcion'=>'required','area'=>'required', 'dueno'=>'required']);
-       //  Producto::create($request->all());
-       //  return redirect()->route('home')->with('success','Registro creado satisfactoriamente');
+
         $due = Auth::user()->id;
         if($request->hasFile('imagen')){
             $file = $request->file('imagen');
