@@ -50,7 +50,7 @@ Y por ultimo migrar los datos.
 php artisan migrate
 ```
 
-### Usando Git
+## Usando Git
 
 Para cada usuario nuevo se recomienda crear un rama con su nombre.
 
